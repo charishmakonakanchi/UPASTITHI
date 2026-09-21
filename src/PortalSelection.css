@@ -1,0 +1,96 @@
+.portal-selection-page {
+  min-height: calc(100vh - 75px);
+  background: #ffffff;
+  padding: 90px 8%;
+  text-align: center;
+}
+
+.step-title {
+  color: #3157d5;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.step-subtitle {
+  color: #687386;
+  font-size: 16px;
+  margin-bottom: 45px;
+}
+
+.portal-selection-card {
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  padding: 40px;
+
+  background: white;
+  border: 1px solid #dce4f5;
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(30, 50, 100, 0.08);
+
+  text-align: left;
+}
+
+.portal-selection-card label {
+  display: block;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.portal-selection-card select {
+  width: 100%;
+  padding: 15px;
+
+  border: 1px solid #d6dfef;
+  border-radius: 8px;
+
+  background: white;
+  color: #172033;
+
+  font-size: 15px;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.portal-selection-card select:focus {
+  border-color: #3157d5;
+}
+
+.continue-button {
+  display: block;
+  width: 100%;
+
+  margin-top: 25px;
+  padding: 14px;
+
+  background: #3157d5;
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.continue-button:hover {
+  background: #2446bd;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+
+  color: #3157d5;
+  text-decoration: none;
+
+  font-size: 14px;
+}
