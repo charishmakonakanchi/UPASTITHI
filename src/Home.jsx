@@ -11,6 +11,7 @@ function Home() {
 
         <div className="brand">
           <img src={logo} alt="Upasthiti Logo" />
+
           <div>
             <h2>Upasthiti</h2>
             <p>Smart Attendance. Secure Presence.</p>
@@ -24,7 +25,8 @@ function Home() {
           <a href="#how-it-works">How It Works</a>
           <a href="#contact">Contact Us</a>
 
-          <Link to="/portal" className="portal-btn">
+          {/* Organization is now Step 1 */}
+          <Link to="/organization" className="portal-btn">
             Portal
           </Link>
         </nav>
@@ -56,7 +58,8 @@ function Home() {
 
           <div className="hero-buttons">
 
-            <Link to="/portal" className="primary-btn">
+            {/* Organization is now Step 1 */}
+            <Link to="/organization" className="primary-btn">
               Get Started
             </Link>
 
@@ -128,25 +131,33 @@ function Home() {
 
           <div className="feature">
             <div className="feature-icon">✓</div>
+
             <h3>Easy Tracking</h3>
+
             <p>
               Track student and employee attendance quickly
               and keep records organized.
             </p>
           </div>
 
+
           <div className="feature">
             <div className="feature-icon">▣</div>
+
             <h3>Smart Dashboard</h3>
+
             <p>
               View attendance information through a clean
               and powerful dashboard.
             </p>
           </div>
 
+
           <div className="feature">
             <div className="feature-icon">↗</div>
+
             <h3>Analytics</h3>
+
             <p>
               Understand attendance patterns with useful
               reports and analytics.
@@ -156,115 +167,165 @@ function Home() {
         </div>
 
       </section>
+
+
       {/* HOW IT WORKS */}
+      <section className="how-section" id="how-it-works">
 
-<section className="how-section" id="how-it-works">
+        <div className="section-label">
+          HOW IT WORKS
+        </div>
 
-  <div className="section-label">HOW IT WORKS</div>
+        <h2>
+          Simple. Secure. Organized.
+        </h2>
 
-  <h2>Simple. Secure. Organized.</h2>
-
-  <p className="how-intro">
-    Upasthiti makes attendance management simple for
-    administrators, organizations and users.
-  </p>
-
-  <div className="steps">
-
-    <div className="step-card">
-      <div className="step-number">01</div>
-
-      <h3>Choose Your Portal</h3>
-
-      <p>
-        Select whether you want to access the Admin Portal
-        or the User Portal.
-      </p>
-    </div>
+        <p className="how-intro">
+          Upasthiti makes attendance management simple for
+          administrators, organizations and users.
+        </p>
 
 
-    <div className="step-card">
-      <div className="step-number">02</div>
+        <div className="steps">
 
-      <h3>Select Organization</h3>
+          {/* STEP 01 */}
+          <div className="step-card">
 
-      <p>
-        Choose your organization and continue to the
-        secure login page.
-      </p>
-    </div>
+            <div className="step-number">
+              01
+            </div>
 
+            <h3>
+              Select Organization
+            </h3>
 
-    <div className="step-card">
-      <div className="step-number">03</div>
+            <p>
+              Choose your organization and continue to the
+              role selection page.
+            </p>
 
-      <h3>Login Securely</h3>
-
-      <p>
-        Enter your registered ID and password to access
-        your account.
-      </p>
-    </div>
+          </div>
 
 
-    <div className="step-card">
-      <div className="step-number">04</div>
+          {/* STEP 02 */}
+          <div className="step-card">
 
-      <h3>Access Your Dashboard</h3>
+            <div className="step-number">
+              02
+            </div>
 
-      <p>
-        Your dashboard is customized according to your
-        role, organization and permissions.
-      </p>
-    </div>
+            <h3>
+              Choose Your Role
+            </h3>
 
-  </div>
+            <p>
+              Select whether you want to access the Admin Portal
+              or the User Portal.
+            </p>
 
-</section>
+          </div>
 
 
-{/* CONTACT */}
+          {/* STEP 03 */}
+          <div className="step-card">
 
-<section className="contact-section" id="contact">
-  <div className="contact-container">
+            <div className="step-number">
+              03
+            </div>
 
-    <div className="contact-title">
-      <p className="section-label">CONTACT US</p>
-      <h2>Get in Touch</h2>
-      <p>
-        Have questions about Upasthiti? Contact Navonmeshi Samadhan LLP
-        for more information and support.
-      </p>
-    </div>
+            <h3>
+              Login Securely
+            </h3>
 
-    <div className="contact-card">
+            <p>
+              Enter your registered ID and password to access
+              your account.
+            </p>
 
-      <h3>NAVONMESHI SAMADHAN LLP</h3>
+          </div>
 
-      <div className="contact-item">
-        <span className="contact-icon">☎</span>
-        <span>+91 90920 12345</span>
-      </div>
 
-      <div className="contact-item">
-        <span className="contact-icon">✉</span>
-        <span>info@navonmeshisamadhan.com</span>
-      </div>
+          {/* STEP 04 */}
+          <div className="step-card">
 
-      <div className="contact-item">
-        <span className="contact-icon">🌐</span>
-        <span>www.navonmeshisamadhan.com</span>
-      </div>
+            <div className="step-number">
+              04
+            </div>
 
-      <div className="contact-item">
-        <span className="contact-icon">📍</span>
-        <span>India</span>
-      </div>
+            <h3>
+              Access Your Dashboard
+            </h3>
 
-    </div>
+            <p>
+              Your dashboard is customized according to your
+              role, organization and permissions.
+            </p>
 
-  </div>
-</section>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* CONTACT */}
+      <section className="contact-section" id="contact">
+
+        <div className="contact-container">
+
+          <div className="contact-title">
+
+            <p className="section-label">
+              CONTACT US
+            </p>
+
+            <h2>
+              Get in Touch
+            </h2>
+
+            <p>
+              Have questions about Upasthiti? Contact Navonmeshi
+              Samadhan LLP for more information and support.
+            </p>
+
+          </div>
+
+
+          <div className="contact-card">
+
+            <h3>
+              NAVONMESHI SAMADHAN LLP
+            </h3>
+
+
+            <div className="contact-item">
+              <span className="contact-icon">☎</span>
+              <span>+91 90920 12345</span>
+            </div>
+
+
+            <div className="contact-item">
+              <span className="contact-icon">✉</span>
+              <span>info@navonmeshisamadhan.com</span>
+            </div>
+
+
+            <div className="contact-item">
+              <span className="contact-icon">🌐</span>
+              <span>www.navonmeshisamadhan.com</span>
+            </div>
+
+
+            <div className="contact-item">
+              <span className="contact-icon">📍</span>
+              <span>India</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
 
     </div>
   );
