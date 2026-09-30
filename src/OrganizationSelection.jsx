@@ -100,4 +100,8 @@ function OrganizationSelection() {
   );
 }
 
+<<<<<<< Updated upstream
 export default OrganizationSelection;
+=======
+export default Organization;
+>>>>>>> Stashed changes
