@@ -6,36 +6,57 @@ function Home() {
   return (
     <div className="home-page">
 
-      {/* NAVBAR */}
+      {/* ================= NAVBAR ================= */}
+
       <header className="navbar">
 
         <div className="brand">
           <img src={logo} alt="Upasthiti Logo" />
 
-          <div>
+          <div className="brand-text">
             <h2>Upasthiti</h2>
             <p>Smart Attendance. Secure Presence.</p>
           </div>
         </div>
 
         <nav>
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#contact">Contact Us</a>
+          <a href="#home" className="active-nav">
+            Home
+          </a>
 
-          {/* Organization is now Step 1 */}
+          <a href="#features">
+            Features
+          </a>
+
+          <a href="#how-it-works">
+            How It Works
+          </a>
+
+          <a href="#contact">
+            Contact Us
+          </a>
+
           <Link to="/organization" className="portal-btn">
-            Portal
+            Portal <span>→</span>
           </Link>
         </nav>
 
       </header>
 
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
+
       <section className="hero" id="home">
+
+        {/* Background decorations */}
+
+        <div className="hero-glow glow-one"></div>
+        <div className="hero-glow glow-two"></div>
+        <div className="hero-glow glow-three"></div>
+
+        <div className="floating-dot dot-one"></div>
+        <div className="floating-dot dot-two"></div>
+        <div className="floating-dot dot-three"></div>
 
         <div className="hero-content">
 
@@ -58,57 +79,265 @@ function Home() {
 
           <div className="hero-buttons">
 
-            {/* Organization is now Step 1 */}
-            <Link to="/organization" className="primary-btn">
+            <Link
+              to="/organization"
+              className="primary-btn"
+            >
               Get Started
+              <span>→</span>
             </Link>
 
-            <a href="#features" className="secondary-btn">
+            <a
+              href="#features"
+              className="secondary-btn"
+            >
+              <span className="play-circle">▶</span>
               Learn More
             </a>
 
           </div>
 
+
+          {/* TRUST BADGES */}
+
+          <div className="trust-row">
+
+            <div className="trust-item">
+              <span className="trust-icon green">
+                ✓
+              </span>
+
+              Secure
+            </div>
+
+            <div className="trust-item">
+              <span className="trust-icon blue">
+                ●
+              </span>
+
+              Easy to Use
+            </div>
+
+            <div className="trust-item">
+              <span className="trust-icon purple">
+                ▥
+              </span>
+
+              Real-time Analytics
+            </div>
+
+          </div>
+
         </div>
 
 
-        {/* ATTENDANCE CARD */}
-        <div className="attendance-card">
+        {/* ================= DASHBOARD ================= */}
 
-          <div className="card-top">
+        <div className="hero-visual">
 
-            <div>
-              <p>Today's Attendance</p>
-              <h2>87%</h2>
+          <div className="visual-glow"></div>
+
+          {/* Decorative ring */}
+
+          <div className="visual-ring"></div>
+
+          {/* Laptop */}
+
+          <div className="laptop">
+
+            <div className="laptop-top">
+
+              <span>
+                ◉ Upasthiti
+              </span>
+
+              <span className="laptop-search">
+                Attendance Overview
+              </span>
+
             </div>
 
-            <div className="check">
-              ✓
+
+            <div className="laptop-screen">
+
+              <div className="screen-heading">
+
+                <strong>
+                  Attendance Overview
+                </strong>
+
+                <span>
+                  This Week ▾
+                </span>
+
+              </div>
+
+
+              {/* GRAPH */}
+
+              <div className="graph">
+
+                <div
+                  className="bar"
+                  style={{ height: "38%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "55%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "45%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "68%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "58%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "82%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "70%" }}
+                ></div>
+
+                <div
+                  className="bar"
+                  style={{ height: "92%" }}
+                ></div>
+
+              </div>
+
+
+              {/* MINI DASHBOARD */}
+
+              <div className="mini-cards">
+
+                <div className="mini-card">
+
+                  <span className="mini-icon blue">
+                    ●
+                  </span>
+
+                  <div>
+                    <small>Total Users</small>
+                    <strong>1,248</strong>
+                  </div>
+
+                </div>
+
+
+                <div className="mini-card">
+
+                  <span className="mini-icon pink">
+                    □
+                  </span>
+
+                  <div>
+                    <small>Events</small>
+                    <strong>32</strong>
+                  </div>
+
+                </div>
+
+
+                <div className="mini-card">
+
+                  <span className="mini-icon green">
+                    ✓
+                  </span>
+
+                  <div>
+                    <small>Active Today</small>
+                    <strong>892</strong>
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
           </div>
 
-          <div className="progress">
-            <div></div>
+
+          {/* FLOATING ATTENDANCE CARD */}
+
+          <div className="attendance-card">
+
+            <div className="attendance-top">
+
+              <div>
+
+                <p>
+                  Today's Attendance
+                </p>
+
+                <h2>
+                  87%
+                  <span>↑ 5%</span>
+                </h2>
+
+                <small>
+                  Compared to yesterday
+                </small>
+
+              </div>
+
+
+              <div className="attendance-check">
+                ✓
+              </div>
+
+            </div>
+
+
+            <div className="attendance-progress">
+              <div></div>
+            </div>
+
+
+            <div className="attendance-stats">
+
+              <div>
+                <strong>43</strong>
+                <span>Present</span>
+              </div>
+
+              <div>
+                <strong>7</strong>
+                <span>Absent</span>
+              </div>
+
+              <div>
+                <strong>50</strong>
+                <span>Total</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="attendance-stats">
 
-            <div>
-              <strong>43</strong>
-              <span>Present</span>
-            </div>
+          {/* Floating decorations */}
 
-            <div>
-              <strong>7</strong>
-              <span>Absent</span>
-            </div>
+          <div className="floating-badge badge-one">
+            ✓ Secure
+          </div>
 
-            <div>
-              <strong>50</strong>
-              <span>Total</span>
-            </div>
-
+          <div className="floating-badge badge-two">
+            ✦ Live Analytics
           </div>
 
         </div>
@@ -116,52 +345,113 @@ function Home() {
       </section>
 
 
-      {/* FEATURES */}
-      <section className="features-section" id="features">
+      {/* ================= FEATURES ================= */}
 
-        <p className="section-label">
+      <section
+        className="features-section"
+        id="features"
+      >
+
+        <div className="section-decoration"></div>
+
+        <div className="section-label">
           WHY UPASHTITHI?
-        </p>
+        </div>
 
         <h2>
           Everything you need to manage attendance
         </h2>
 
+        <p className="section-description">
+          Powerful tools designed to make attendance
+          management simpler, smarter and more secure.
+        </p>
+
+
         <div className="feature-grid">
 
-          <div className="feature">
-            <div className="feature-icon">✓</div>
 
-            <h3>Easy Tracking</h3>
+          {/* CARD 1 */}
 
-            <p>
-              Track student and employee attendance quickly
-              and keep records organized.
-            </p>
+          <div className="feature feature-blue">
+
+            <div className="feature-icon">
+              👥
+            </div>
+
+            <div>
+
+              <h3>
+                Easy Tracking
+              </h3>
+
+              <p>
+                Track student and employee attendance
+                quickly and keep records organized.
+              </p>
+
+            </div>
+
+            <span className="feature-number">
+              01
+            </span>
+
           </div>
 
 
-          <div className="feature">
-            <div className="feature-icon">▣</div>
+          {/* CARD 2 */}
 
-            <h3>Smart Dashboard</h3>
+          <div className="feature feature-purple">
 
-            <p>
-              View attendance information through a clean
-              and powerful dashboard.
-            </p>
+            <div className="feature-icon">
+              ◔
+            </div>
+
+            <div>
+
+              <h3>
+                Smart Dashboard
+              </h3>
+
+              <p>
+                View attendance information through a
+                clean and powerful dashboard.
+              </p>
+
+            </div>
+
+            <span className="feature-number">
+              02
+            </span>
+
           </div>
 
 
-          <div className="feature">
-            <div className="feature-icon">↗</div>
+          {/* CARD 3 */}
 
-            <h3>Analytics</h3>
+          <div className="feature feature-green">
 
-            <p>
-              Understand attendance patterns with useful
-              reports and analytics.
-            </p>
+            <div className="feature-icon">
+              ▥
+            </div>
+
+            <div>
+
+              <h3>
+                Analytics
+              </h3>
+
+              <p>
+                Understand attendance patterns with
+                useful reports and analytics.
+              </p>
+
+            </div>
+
+            <span className="feature-number">
+              03
+            </span>
+
           </div>
 
         </div>
@@ -169,8 +459,14 @@ function Home() {
       </section>
 
 
-      {/* HOW IT WORKS */}
-      <section className="how-section" id="how-it-works">
+      {/* ================= HOW IT WORKS ================= */}
+
+      <section
+        className="how-section"
+        id="how-it-works"
+      >
+
+        <div className="how-background-circle"></div>
 
         <div className="section-label">
           HOW IT WORKS
@@ -181,85 +477,132 @@ function Home() {
         </h2>
 
         <p className="how-intro">
-          Upasthiti makes attendance management simple for
-          administrators, organizations and users.
+          From selecting your organization to accessing
+          your personalized dashboard, Upasthiti keeps
+          every step simple.
         </p>
 
 
-        <div className="steps">
+        <div className="timeline">
 
-          {/* STEP 01 */}
-          <div className="step-card">
 
-            <div className="step-number">
-              01
+          {/* STEP 1 */}
+
+          <div className="timeline-item">
+
+            <div className="timeline-icon blue">
+              🏛
             </div>
 
-            <h3>
-              Select Organization
-            </h3>
+            <div className="timeline-content">
 
-            <p>
-              Choose your organization and continue to the
-              role selection page.
-            </p>
+              <span>
+                STEP 01
+              </span>
+
+              <h3>
+                Select Organization
+              </h3>
+
+              <p>
+                Choose your organization and continue
+                to the role selection page.
+              </p>
+
+            </div>
 
           </div>
 
 
-          {/* STEP 02 */}
-          <div className="step-card">
+          <div className="timeline-line"></div>
 
-            <div className="step-number">
-              02
+
+          {/* STEP 2 */}
+
+          <div className="timeline-item">
+
+            <div className="timeline-icon purple">
+              ●
             </div>
 
-            <h3>
-              Choose Your Role
-            </h3>
+            <div className="timeline-content">
 
-            <p>
-              Select whether you want to access the Admin Portal
-              or the User Portal.
-            </p>
+              <span>
+                STEP 02
+              </span>
+
+              <h3>
+                Choose Your Role
+              </h3>
+
+              <p>
+                Select whether you want to continue
+                as an Admin or a User.
+              </p>
+
+            </div>
 
           </div>
 
 
-          {/* STEP 03 */}
-          <div className="step-card">
+          <div className="timeline-line"></div>
 
-            <div className="step-number">
-              03
+
+          {/* STEP 3 */}
+
+          <div className="timeline-item">
+
+            <div className="timeline-icon green">
+              🔒
             </div>
 
-            <h3>
-              Login Securely
-            </h3>
+            <div className="timeline-content">
 
-            <p>
-              Enter your registered ID and password to access
-              your account.
-            </p>
+              <span>
+                STEP 03
+              </span>
+
+              <h3>
+                Login Securely
+              </h3>
+
+              <p>
+                Enter your registered ID and password
+                to securely access your account.
+              </p>
+
+            </div>
 
           </div>
 
 
-          {/* STEP 04 */}
-          <div className="step-card">
+          <div className="timeline-line"></div>
 
-            <div className="step-number">
-              04
+
+          {/* STEP 4 */}
+
+          <div className="timeline-item">
+
+            <div className="timeline-icon orange">
+              ▦
             </div>
 
-            <h3>
-              Access Your Dashboard
-            </h3>
+            <div className="timeline-content">
 
-            <p>
-              Your dashboard is customized according to your
-              role, organization and permissions.
-            </p>
+              <span>
+                STEP 04
+              </span>
+
+              <h3>
+                Access Your Dashboard
+              </h3>
+
+              <p>
+                Your dashboard is customized according
+                to your role, organization and permissions.
+              </p>
+
+            </div>
 
           </div>
 
@@ -268,24 +611,33 @@ function Home() {
       </section>
 
 
-      {/* CONTACT */}
-      <section className="contact-section" id="contact">
+      {/* ================= CONTACT ================= */}
+
+      <section
+        className="contact-section"
+        id="contact"
+      >
+
+        <div className="contact-orb"></div>
 
         <div className="contact-container">
 
-          <div className="contact-title">
+          <div className="contact-left">
 
-            <p className="section-label">
+            <div className="section-label">
               CONTACT US
-            </p>
+            </div>
 
             <h2>
-              Get in Touch
+              Let's build a smarter
+              <br />
+              attendance experience.
             </h2>
 
             <p>
-              Have questions about Upasthiti? Contact Navonmeshi
-              Samadhan LLP for more information and support.
+              Have questions about Upasthiti?
+              Contact Navonmeshi Samadhan LLP
+              for more information and support.
             </p>
 
           </div>
@@ -299,26 +651,54 @@ function Home() {
 
 
             <div className="contact-item">
-              <span className="contact-icon">☎</span>
-              <span>+91 90920 12345</span>
+
+              <div className="contact-icon">
+                ☎
+              </div>
+
+              <span>
+                +91 90920 12345
+              </span>
+
             </div>
 
 
             <div className="contact-item">
-              <span className="contact-icon">✉</span>
-              <span>info@navonmeshisamadhan.com</span>
+
+              <div className="contact-icon">
+                ✉
+              </div>
+
+              <span>
+                info@navonmeshisamadhan.com
+              </span>
+
             </div>
 
 
             <div className="contact-item">
-              <span className="contact-icon">🌐</span>
-              <span>www.navonmeshisamadhan.com</span>
+
+              <div className="contact-icon">
+                ◎
+              </div>
+
+              <span>
+                www.navonmeshisamadhan.com
+              </span>
+
             </div>
 
 
             <div className="contact-item">
-              <span className="contact-icon">📍</span>
-              <span>India</span>
+
+              <div className="contact-icon">
+                📍
+              </div>
+
+              <span>
+                India
+              </span>
+
             </div>
 
           </div>
@@ -326,6 +706,21 @@ function Home() {
         </div>
 
       </section>
+
+
+      {/* ================= FOOTER ================= */}
+
+      <footer className="footer">
+
+        <div>
+          © 2026 Upasthiti
+        </div>
+
+        <div>
+          Smart Attendance. Secure Presence.
+        </div>
+
+      </footer>
 
     </div>
   );

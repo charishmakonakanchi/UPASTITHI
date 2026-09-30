@@ -1,268 +1,502 @@
-/* =========================================
-   ORGANIZATION PAGE
-========================================= */
+/* =====================================================
+   ORGANIZATION SELECTION
+===================================================== */
 
 .organization-page {
   min-height: 100vh;
-  width: 100%;
 
-  background: #f5f7ff;
+  position: relative;
 
-  padding: 35px 20px;
+  overflow: hidden;
 
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(92, 102, 245, 0.25),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(36, 207, 177, 0.20),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(92, 112, 245, 0.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #edf0ff,
+      #f8f9ff 48%,
+      #e9fff9
+    );
 }
 
 
-/* =========================================
-   TOP HEADING
-========================================= */
+/* BACKGROUND ORBS */
 
-.organization-page .step-label {
-  width: 100%;
+.flow-orb {
+  position: absolute;
 
-  text-align: center !important;
+  border-radius: 50%;
 
-  color: #2854d9;
+  pointer-events: none;
+}
+
+.flow-orb-one {
+  width: 450px;
+  height: 450px;
+
+  left: -260px;
+  top: -180px;
+
+  border: 1px solid rgba(79, 103, 230, 0.18);
+
+  box-shadow:
+    0 0 0 35px rgba(79, 103, 230, 0.035),
+    0 0 0 70px rgba(79, 103, 230, 0.025);
+}
+
+.flow-orb-two {
+  width: 500px;
+  height: 500px;
+
+  right: -300px;
+  bottom: -300px;
+
+  border: 1px solid rgba(33, 190, 160, 0.2);
+
+  box-shadow:
+    0 0 0 40px rgba(33, 190, 160, 0.035),
+    0 0 0 80px rgba(33, 190, 160, 0.025);
+}
+
+
+/* DOT GRID */
+
+.flow-grid {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: 7%;
+  top: 13%;
+
+  opacity: 0.35;
+
+  background-image:
+    radial-gradient(
+      #5679ed 1.5px,
+      transparent 1.5px
+    );
+
+  background-size: 18px 18px;
+}
+
+
+/* MAIN */
+
+.flow-container {
+  max-width: 850px;
+
+  margin: auto;
+
+  padding: 70px 25px 50px;
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* STEP */
+
+.flow-step {
+  color: #315bea;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 14px;
+}
+
+.flow-container > h1 {
+  color: #122f70;
+
+  font-size: 48px;
+
+  letter-spacing: -1px;
+
+  margin-bottom: 10px;
+}
+
+.flow-subtitle {
+  color: #657492;
 
   font-size: 16px;
-  font-weight: 800;
 
-  letter-spacing: 1px;
-
-  margin: 0 0 10px;
+  margin-bottom: 35px;
 }
 
 
-.organization-page h1 {
-  width: 100%;
+/* =====================================================
+   SELECTION CARD
+===================================================== */
 
-  text-align: center !important;
-
-  color: #173675;
-
-  font-size: 40px;
-  font-weight: 800;
-
-  line-height: 1.1;
-
-  margin: 0;
-}
-
-
-.organization-page .subtitle {
-  width: 100%;
-
-  text-align: center !important;
-
-  color: #667693;
-
-  font-size: 18px;
-
-  margin: 10px 0 28px;
-}
-
-
-/* =========================================
-   ORGANIZATION CARD
-========================================= */
-
-.organization-card {
-  width: 100%;
+.selection-card {
   max-width: 760px;
 
-  background: #ffffff;
+  margin: auto;
 
-  border: 1px solid #d5deef;
+  padding: 35px 40px;
 
-  border-radius: 22px;
+  text-align: left;
 
-  padding: 28px 34px;
+  border-radius: 26px;
 
-  box-sizing: border-box;
+  background:
+    rgba(255, 255, 255, 0.78);
 
-  box-shadow: 0 8px 25px rgba(30, 60, 120, 0.05);
+  border: 1px solid rgba(255,255,255,0.9);
 
-  margin: 0 auto;
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 70px rgba(42, 67, 130, 0.14);
 }
 
 
-/* =========================================
-   CARD TITLE
-========================================= */
+/* HEADER */
 
-.organization-card h2 {
-  color: #173675;
+.selection-card-header {
+  display: flex;
 
-  font-size: 21px;
+  align-items: center;
+
+  gap: 17px;
+
+  margin-bottom: 30px;
+}
+
+.selection-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  font-size: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d5e2ff,
+      #e8edff
+    );
+
+  box-shadow:
+    0 10px 25px rgba(55, 92, 210, 0.12);
+}
+
+.selection-card-header h2 {
+  color: #173572;
+
+  font-size: 22px;
+
+  margin-bottom: 5px;
+}
+
+.selection-card-header p {
+  color: #7a879e;
+
+  font-size: 12px;
+}
+
+
+/* LABEL */
+
+.selection-label {
+  display: block;
+
+  color: #263f76;
+
+  font-size: 12px;
+
   font-weight: 800;
 
-  margin: 0 0 14px;
+  margin-bottom: 8px;
 }
 
 
-/* =========================================
-   DROPDOWN
-========================================= */
+/* SELECT */
 
-.organization-card select {
+.modern-select {
   width: 100%;
 
-  height: 52px;
+  padding: 16px 18px;
 
-  padding: 0 16px;
+  border-radius: 12px;
 
-  border: 2px solid #cbd7ec;
-
-  border-radius: 11px;
-
-  background: #ffffff;
-
-  color: #173675;
-
-  font-size: 17px;
+  border: 1.5px solid #cbd7ef;
 
   outline: none;
 
-  box-sizing: border-box;
+  color: #173672;
+
+  font-size: 14px;
+
+  background: white;
 
   cursor: pointer;
+
+  transition: 0.25s;
 }
 
-.organization-card select:focus {
-  border-color: #2854d9;
+.modern-select:focus {
+  border-color: #4167e8;
+
+  box-shadow:
+    0 0 0 4px rgba(65,103,232,0.1);
 }
 
 
-/* =========================================
+/* =====================================================
    ORGANIZATION LIST
-========================================= */
+===================================================== */
 
 .organization-list {
-  width: 100%;
-
-  margin-top: 8px;
+  margin-top: 28px;
 }
 
+.list-title {
+  color: #7c89a0;
 
-.organization-item {
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 10px;
+}
+
+.organization-option {
   width: 100%;
 
-  height: 48px;
+  padding: 14px 8px;
 
   display: flex;
 
   align-items: center;
 
-  padding: 0 15px;
+  gap: 14px;
 
-  box-sizing: border-box;
+  border: none;
 
-  border-bottom: 1px solid #e3e8f1;
+  border-bottom: 1px solid #e6ebf4;
 
-  color: #173675;
+  background: transparent;
 
-  font-size: 17px;
+  color: #23437f;
+
+  font-size: 14px;
+
+  text-align: left;
 
   cursor: pointer;
 
-  transition: background 0.2s ease;
+  transition: 0.25s;
+}
+
+.organization-option:hover {
+  padding-left: 15px;
+
+  color: #315bea;
+
+  background: rgba(224,233,255,0.5);
+}
+
+.organization-option.selected {
+  color: #315bea;
+
+  font-weight: 700;
+
+  background: #edf2ff;
+}
+
+.org-number {
+  width: 28px;
+
+  color: #8996ae;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.org-arrow {
+  margin-left: auto;
+
+  color: #6b87db;
+
+  font-size: 18px;
 }
 
 
-.organization-item:hover {
-  background: #f5f7ff;
+/* CONTINUE */
+
+.flow-continue {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #20b9ee,
+      #315bea,
+      #743be8
+    );
+
+  box-shadow:
+    0 13px 30px rgba(53, 88, 225, 0.25);
+
+  transition: 0.3s;
+}
+
+.flow-continue span {
+  margin-left: 8px;
+
+  font-size: 18px;
+}
+
+.flow-continue:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 35px rgba(53, 88, 225, 0.35);
 }
 
 
-.organization-item.selected {
-  background: #eef3ff;
+/* =====================================================
+   PROGRESS
+===================================================== */
 
-  color: #2854d9;
+.progress-wrapper {
+  margin: 32px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.progress-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #8995aa;
+
+  font-size: 10px;
 
   font-weight: 700;
 }
 
+.progress-item span {
+  width: 25px;
+  height: 25px;
 
-/* =========================================
-   CONTINUE BUTTON
-========================================= */
+  display: flex;
 
-.continue-btn {
-  width: 100%;
+  align-items: center;
+  justify-content: center;
 
-  height: 52px;
+  border-radius: 50%;
 
-  margin-top: 20px;
+  background: #e1e6f1;
 
-  border: none;
+  color: #71809c;
 
-  border-radius: 11px;
+  font-size: 10px;
+}
 
-  background: #2c55d9;
+.progress-item.active {
+  color: #315bea;
+}
 
+.progress-item.active span {
   color: white;
 
-  font-size: 17px;
+  background: #315bea;
 
-  font-weight: 800;
+  box-shadow:
+    0 5px 15px rgba(49,91,234,0.25);
+}
 
-  cursor: pointer;
+.progress-line {
+  width: 55px;
 
-  transition: background 0.2s ease;
+  height: 2px;
+
+  background: #d9e0ee;
 }
 
 
-.continue-btn:hover {
-  background: #2148c5;
-}
+/* MOBILE */
 
+@media (max-width: 650px) {
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-  .organization-page {
-    padding: 25px 15px;
+  .flow-container {
+    padding: 45px 18px;
   }
 
-  .organization-page h1 {
-    font-size: 32px;
+  .flow-container > h1 {
+    font-size: 35px;
   }
 
-  .organization-page .subtitle {
-    font-size: 16px;
-    margin-bottom: 22px;
+  .selection-card {
+    padding: 25px 20px;
   }
 
-  .organization-card {
-    max-width: 100%;
-
-    padding: 24px 22px;
+  .progress-wrapper {
+    gap: 5px;
   }
 
-  .organization-card h2 {
-    font-size: 19px;
+  .progress-line {
+    width: 25px;
   }
 
-  .organization-card select {
-    height: 48px;
-    font-size: 16px;
-  }
-
-  .organization-item {
-    height: 44px;
-    font-size: 16px;
-  }
-
-  .continue-btn {
-    height: 48px;
-    font-size: 16px;
-  }
 }
