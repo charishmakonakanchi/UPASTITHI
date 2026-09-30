@@ -1,40 +1,42 @@
 import { useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./PortalSelection.css";
 
 function PortalSelection() {
-  const [portal, setPortal] = useState("");
-
   const navigate = useNavigate();
+
   const [searchParams] = useSearchParams();
 
-  const organization = searchParams.get("organization");
+  const organization =
+    searchParams.get("organization") || "Organization";
 
-  const roles = [
-    "Admin",
-    "User",
-  ];
+  const [role, setRole] = useState("");
 
   const handleContinue = () => {
-    if (!portal) {
-      alert("Please select a role");
+
+    if (!role) {
+      alert("Please select your role");
       return;
     }
 
     navigate(
       `/login?organization=${encodeURIComponent(
-        organization || ""
-      )}&role=${encodeURIComponent(portal)}`
+        organization
+      )}&role=${role}`
     );
   };
 
   return (
-    <div className="portal-selection-page">
+    <div className="flow-page role-page">
 
-      {/* HEADER */}
-      <div className="portal-header">
+      {/* BACKGROUND */}
 
-        <div className="step-title">
+      <div className="role-orb role-orb-one"></div>
+      <div className="role-orb role-orb-two"></div>
+
+      <main className="flow-container role-container">
+
+        <div className="flow-step">
           STEP 2 OF 3
         </div>
 
@@ -42,82 +44,170 @@ function PortalSelection() {
           Choose Your Role
         </h1>
 
-        <p className="step-subtitle">
+        <p className="flow-subtitle">
           Select your role to continue
         </p>
 
-      </div>
 
+        {/* ORGANIZATION BADGE */}
 
-      {/* CARD */}
-      <div className="portal-selection-card">
+        <div className="selected-organization">
 
-        <h2>
-          Select Role
-        </h2>
+          <span>
+            Organization
+          </span>
 
-
-        {/* DROPDOWN */}
-        <select
-          id="portal"
-          value={portal}
-          onChange={(e) => setPortal(e.target.value)}
-        >
-          <option value="">
-            Select Role
-          </option>
-
-          {roles.map((role) => (
-            <option
-              key={role}
-              value={role.toLowerCase()}
-            >
-              {role}
-            </option>
-          ))}
-        </select>
-
-
-        {/* ROLE LIST */}
-        <div className="role-list">
-
-          {roles.map((role) => (
-            <div
-              key={role}
-              className={`role-item ${
-                portal === role.toLowerCase()
-                  ? "selected"
-                  : ""
-              }`}
-              onClick={() =>
-                setPortal(role.toLowerCase())
-              }
-            >
-              {role}
-            </div>
-          ))}
+          <strong>
+            {organization}
+          </strong>
 
         </div>
 
 
-        {/* CONTINUE */}
-        <button
-          className="continue-button"
-          onClick={handleContinue}
-        >
-          Continue to Login →
-        </button>
+        {/* ROLE CARD */}
 
-      </div>
+        <div className="role-selection-card">
+
+          <div className="role-header">
+
+            <div className="role-main-icon">
+              👤
+            </div>
+
+            <div>
+              <h2>
+                Select Your Role
+              </h2>
+
+              <p>
+                Choose how you want to access Upasthiti
+              </p>
+            </div>
+
+          </div>
 
 
-      {/* BACK */}
-      <Link
-        to={`/organization`}
-        className="back-link"
-      >
-        ← Back to Organization
-      </Link>
+          {/* ROLE OPTIONS */}
+
+          <div className="role-options">
+
+
+            {/* ADMIN */}
+
+            <button
+              className={`role-option ${
+                role === "admin"
+                  ? "role-selected"
+                  : ""
+              }`}
+              onClick={() => setRole("admin")}
+            >
+
+              <div className="role-icon admin-icon">
+                🛡
+              </div>
+
+              <div className="role-text">
+
+                <h3>
+                  Administrator
+                </h3>
+
+                <p>
+                  Manage attendance, users, events
+                  and organization settings.
+                </p>
+
+              </div>
+
+              <div className="role-radio">
+                {role === "admin" ? "✓" : ""}
+              </div>
+
+            </button>
+
+
+            {/* USER */}
+
+            <button
+              className={`role-option ${
+                role === "user"
+                  ? "role-selected"
+                  : ""
+              }`}
+              onClick={() => setRole("user")}
+            >
+
+              <div className="role-icon user-icon">
+                👤
+              </div>
+
+              <div className="role-text">
+
+                <h3>
+                  User
+                </h3>
+
+                <p>
+                  View attendance, events and your
+                  personal dashboard.
+                </p>
+
+              </div>
+
+              <div className="role-radio">
+                {role === "user" ? "✓" : ""}
+              </div>
+
+            </button>
+
+          </div>
+
+
+          {/* CONTINUE */}
+
+          <button
+            className="flow-continue"
+            onClick={handleContinue}
+          >
+
+            Continue to Login
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+
+        {/* PROGRESS */}
+
+        <div className="progress-wrapper">
+
+          <div className="progress-item completed">
+            <span>✓</span>
+            Organization
+          </div>
+
+          <div className="progress-line completed-line"></div>
+
+          <div className="progress-item active">
+            <span>2</span>
+            Role
+          </div>
+
+          <div className="progress-line"></div>
+
+          <div className="progress-item">
+            <span>3</span>
+            Login
+          </div>
+
+        </div>
+
+      </main>
 
     </div>
   );

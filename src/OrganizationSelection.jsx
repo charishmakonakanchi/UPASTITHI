@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./OrganizationSelection.css";
 
 function OrganizationSelection() {
-  const [organization, setOrganization] = useState("");
   const navigate = useNavigate();
+
+  const [organization, setOrganization] = useState("");
 
   const organizations = [
     "ABC College",
@@ -25,76 +26,162 @@ function OrganizationSelection() {
   };
 
   return (
-    <div className="organization-page">
+    <div className="flow-page organization-page">
 
-      {/* HEADER */}
-      <div className="organization-header">
+      {/* Decorative background */}
+      <div className="flow-orb flow-orb-one"></div>
+      <div className="flow-orb flow-orb-two"></div>
+      <div className="flow-grid"></div>
 
-        <div className="step-label">
+      <main className="flow-container">
+
+        {/* STEP */}
+
+        <div className="flow-step">
           STEP 1 OF 3
         </div>
 
-        <h1>Choose Organization</h1>
+        <h1>
+          Choose Organization
+        </h1>
 
-        <p>
+        <p className="flow-subtitle">
           Select your organization to continue
         </p>
 
-      </div>
 
+        {/* ORGANIZATION CARD */}
 
-      {/* CARD */}
-      <div className="organization-card">
+        <div className="selection-card">
 
-        <h2>
-          Select Organization
-        </h2>
+          <div className="selection-card-header">
 
-
-        {/* DROPDOWN */}
-        <select
-          value={organization}
-          onChange={(e) => setOrganization(e.target.value)}
-        >
-          <option value="">
-            Select Organization
-          </option>
-
-          {organizations.map((org) => (
-            <option key={org} value={org}>
-              {org}
-            </option>
-          ))}
-        </select>
-
-
-        {/* ORGANIZATION LIST */}
-        <div className="organization-list">
-
-          {organizations.map((org) => (
-            <div
-              key={org}
-              className={`organization-item ${
-                organization === org ? "selected" : ""
-              }`}
-              onClick={() => setOrganization(org)}
-            >
-              {org}
+            <div className="selection-icon">
+              🏢
             </div>
-          ))}
+
+            <div>
+              <h2>
+                Select Organization
+              </h2>
+
+              <p>
+                Choose the organization you belong to
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* SELECT */}
+
+          <label className="selection-label">
+            Organization
+          </label>
+
+          <select
+            value={organization}
+            onChange={(e) => setOrganization(e.target.value)}
+            className="modern-select"
+          >
+
+            <option value="">
+              Select Organization
+            </option>
+
+            {organizations.map((org) => (
+              <option
+                key={org}
+                value={org}
+              >
+                {org}
+              </option>
+            ))}
+
+          </select>
+
+
+          {/* ORGANIZATION LIST */}
+
+          <div className="organization-list">
+
+            <p className="list-title">
+              Available Organizations
+            </p>
+
+            {organizations.map((org, index) => (
+
+              <button
+                key={org}
+                className={`organization-option ${
+                  organization === org ? "selected" : ""
+                }`}
+                onClick={() => setOrganization(org)}
+              >
+
+                <span className="org-number">
+                  0{index + 1}
+                </span>
+
+                <span>
+                  {org}
+                </span>
+
+                <span className="org-arrow">
+                  →
+                </span>
+
+              </button>
+
+            ))}
+
+          </div>
+
+
+          {/* CONTINUE */}
+
+          <button
+            className="flow-continue"
+            onClick={handleContinue}
+          >
+
+            Continue to Role
+
+            <span>
+              →
+            </span>
+
+          </button>
 
         </div>
 
 
-        {/* CONTINUE BUTTON */}
-        <button
-          className="continue-btn"
-          onClick={handleContinue}
-        >
-          Continue to Role →
-        </button>
+        {/* PROGRESS */}
 
-      </div>
+        <div className="progress-wrapper">
+
+          <div className="progress-item active">
+            <span>1</span>
+            Organization
+          </div>
+
+          <div className="progress-line"></div>
+
+          <div className="progress-item">
+            <span>2</span>
+            Role
+          </div>
+
+          <div className="progress-line"></div>
+
+          <div className="progress-item">
+            <span>3</span>
+            Login
+          </div>
+
+        </div>
+
+      </main>
 
     </div>
   );
